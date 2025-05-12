@@ -5,12 +5,13 @@ import * as d3 from "d3";
 console.log("Hello World")
 
 // Declare the chart dimensions and margins.
-const width = 1000;
-const height = 400;
+// const width = 1500;
+const height = 200;
 const marginTop = 20;
 const marginRight = 20;
 const marginBottom = 30;
 const marginLeft = 40;
+const width = window.outerWidth - marginLeft - marginRight;
 
 // Declare the x (horizontal position) scale.
 const x = d3.scaleUtc()
