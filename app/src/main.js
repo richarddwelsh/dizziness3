@@ -1,6 +1,7 @@
 import './style.css'
 
 import * as d3 from "d3";
+import Papa from "papaparse";
 
 console.log("Hello World")
 
@@ -11,7 +12,7 @@ const marginTop = 20;
 const marginRight = 20;
 const marginBottom = 30;
 const marginLeft = 40;
-const width = window.outerWidth - marginLeft - marginRight;
+const width = window.innerWidth - marginLeft - marginRight;
 
 // Declare the x (horizontal position) scale.
 const x = d3.scaleUtc()
@@ -20,7 +21,7 @@ const x = d3.scaleUtc()
 
 // Declare the y (vertical position) scale.
 const y = d3.scaleLinear()
-    .domain([0, 100])
+    .domain([0, 4])
     .range([height - marginBottom, marginTop]);
 
 // Create the SVG container.
@@ -56,3 +57,26 @@ const zoom = d3.zoom()
 
 // Append the SVG element.
 document.querySelector('#app').append(svg.call(zoom).node());
+
+const timeOfDay = {
+    'nite': '03:00',
+    'am': '09:00',
+    'mid': '15:00',
+    'pm': '21:00'
+}
+
+// Download and parse CSV data
+Papa.parse('/data/export.csv', {
+    download: true,
+    header: true,
+    complete: function ({data, errors, meta}) {
+        // console.log(data);
+        const tranformedData = data.map(d => ({
+                timepoint: new Date(`${d.Date}T${timeOfDay[d.Period]}Z`),
+                level: d.Dizziness ? (d.Dizziness == '' ? null : Number(d.Dizziness)) : null
+            })  
+        )
+
+        console.log(tranformedData);
+    }
+})
