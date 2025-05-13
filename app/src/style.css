@@ -4,3 +4,8 @@
   font-family: 'Roboto';
   font-size: small;
 }
+
+.l1 { fill: hsl(80, 100%, 50%); }
+.l2 { fill: hsl(51, 100%, 50%); }
+.l3 { fill: hsl(29, 100%, 50%); }
+.l4 { fill: hsl(0, 100%, 50%); }
