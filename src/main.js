@@ -3,7 +3,7 @@ import './style.css'
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import Papa from "https://cdn.jsdelivr.net/npm/papaparse@5.5.2/+esm";
 
-console.log("Hello World");
+console.log("Hello World from main.js");
 
 const timeOfDay = {
     'nite': '00:00',
@@ -26,7 +26,7 @@ Papa.parse('./data/export.csv', {
             })  
         )
 
-        console.log(tranformedData);
+        // console.log(tranformedData);
 
         renderChart(document.querySelector('#app'), tranformedData);
     }
