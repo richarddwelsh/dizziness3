@@ -6,4 +6,7 @@ export default defineConfig({
     port: 8000, // or any other port you prefer
     allowedHosts: ['zinc.local']
   },
+  build: {
+    sourcemap: true
+  }
 });
