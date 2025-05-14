@@ -1,9 +1,9 @@
 import './style.css'
 
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
-import Papa from "papaparse";
+import Papa from "https://cdn.jsdelivr.net/npm/papaparse@5.5.2/+esm";
 
-console.log("Hello World")
+console.log("Hello World");
 
 const timeOfDay = {
     'nite': '00:00',
