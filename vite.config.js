@@ -9,5 +9,5 @@ export default defineConfig({
   build: {
     sourcemap: true,
   },
-  base: '/dizziness3/'
+  base: '/dizziness3/dist/'
 });
