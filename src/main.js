@@ -13,7 +13,7 @@ const timeOfDay = {
 }
 
 // Download and parse CSV data
-Papa.parse('/data/export.csv', {
+Papa.parse('./data/export.csv', {
     download: true,
     header: true,
     complete: function ({data, errors, meta}) {

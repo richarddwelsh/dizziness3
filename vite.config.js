@@ -7,6 +7,7 @@ export default defineConfig({
     allowedHosts: ['zinc.local']
   },
   build: {
-    sourcemap: true
-  }
+    sourcemap: true,
+  },
+  base: '/dizziness3/'
 });
